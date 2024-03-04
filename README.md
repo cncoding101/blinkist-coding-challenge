@@ -1,0 +1,1 @@
+# blinkist-coding-challenge
