@@ -10,6 +10,7 @@ button {
   transition: transform 0.3s ease-in-out;
 }
 
+a,
 button {
   &:hover {
     cursor: pointer;
@@ -20,6 +21,7 @@ button {
   }
 }
 
+a,
 button {
   &:hover {
     transform: scale(1.1);

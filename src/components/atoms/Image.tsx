@@ -7,8 +7,8 @@ interface IProps {
   height?: number;
   alt?: string;
   scale?: number;
-  layout?: "fill";
-  objectFit?: "cover" | "contain";
+  fill?: boolean;
+  style?: Record<string, unknown>;
   className?: string;
 }
 
@@ -16,10 +16,10 @@ const Image: React.FC<IProps> = ({
   url,
   width,
   height,
-  layout,
-  objectFit,
+  fill,
   alt = "",
   scale = 100,
+  style,
   className = "",
 }) => {
   return (
@@ -28,8 +28,8 @@ const Image: React.FC<IProps> = ({
       alt={alt}
       width={width}
       height={height}
-      layout={layout}
-      objectFit={objectFit}
+      fill={fill}
+      style={style}
       className={`scale-${scale} ${className}`}
     />
   );
