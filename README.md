@@ -63,7 +63,7 @@ The simplest deployment method is through Vercel. The GitHub repository is pre-c
 
 ### A/B testing
 
-To explore the different variations, such as "control" or "test," you may clear your cookies and refresh the page. After several attempts, both variations should become visible. Should an error page indicating a problem appear, it is likely due to the absence of a generated user ID. A simple page refresh should resolve this issue.
+To explore the different variations, such as "control" or "test," you may clear your cookies and refresh the page. After several attempts, both variations should become visible. Should an error page indicating a problem appear, it is likely due to the absence of a generated user ID. A simple page refresh should resolve this issue. I have added in a timer for the error page to which the page will reload by itself.
 
 ### GitHub Workflow
 

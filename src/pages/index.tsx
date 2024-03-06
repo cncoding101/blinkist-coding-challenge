@@ -5,7 +5,6 @@ import Cookie from "js-cookie";
 import Text from "@/components/atoms/Text";
 import Button from "@/components/atoms/Button";
 import HeroImage from "@/components/atoms/Image";
-import Card from "@/components/molecules/Card";
 import Error from "@/components/molecules/Error";
 import { usePhoneView } from "@/hoc/layout";
 import { IVariation } from "@/util/types";
