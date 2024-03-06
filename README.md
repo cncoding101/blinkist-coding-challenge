@@ -8,6 +8,7 @@ This repository contains a ready-to-deploy Next.js web application. Utilizing a 
 - **ESLint:** Ensures consistent code quality and style.
 - **TypeScript:** Adds static typing to enhance code robustness.
 - **Tailwind CSS:** Provides utility-first styling for quick and responsive designs.
+- **Redis Cache:** Enhanced performance through efficient caching mechanisms.
 
 ## Frontend Component Structure:
 
