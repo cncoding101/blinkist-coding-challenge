@@ -1,7 +1,24 @@
 {
   "control": {
     "title": "5 Books That Will Change Your Perspective",
-    "signUpText": "Inspired to read more? Sign up today and explore a world of knowledge."
+    "signUpText": "Inspired to read more? Sign up today and explore a world of knowledge.",
+    "books": [
+      {
+        "title": "The Alchemist"
+      },
+      {
+        "title": "Sapiens: A Brief History of Humankind"
+      },
+      {
+        "title": "The Power of Habit"
+      },
+      {
+        "title": "Thinking, Fast and Slow"
+      },
+      {
+        "title": "Quiet: The Power of Introverts in a World That Can't Stop Talking"
+      }
+    ]
   },
   "test": {
     "title": "Learn fast and learn smart!",

@@ -5,6 +5,7 @@ type Variant = keyof typeof ELEMENTS;
 interface IProps {
   variant: Variant;
   children: ReactNode | ReactNode[];
+  style?: Record<string, unknown>;
   className?: string;
 }
 
@@ -15,10 +16,19 @@ const ELEMENTS = {
   label: "label",
 } as const;
 
-const Text: React.FC<IProps> = ({ variant, children, className }) => {
+const Text: React.FC<IProps> = ({
+  variant,
+  children,
+  style,
+  className = "",
+}) => {
   const Component = ELEMENTS[variant];
 
-  return <Component className={className}>{children}</Component>;
+  return (
+    <Component style={style} className={className}>
+      {children}
+    </Component>
+  );
 };
 
 export default Text;

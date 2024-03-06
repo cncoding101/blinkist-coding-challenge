@@ -5,8 +5,14 @@ import { IVariation } from "@/util/types";
 
 const fetchVariation = async (
   page: string,
-  userId: string
+  userId?: string
 ): Promise<{ variation: IVariation; error?: string }> => {
+  if (!userId)
+    return {
+      variation: { title: "", signUpText: "" },
+      error: "There seems to have been an issue",
+    };
+
   try {
     const filePath = path.join(process.cwd(), "src", "data", `${page}.json`);
     if (!fs.existsSync(filePath)) {

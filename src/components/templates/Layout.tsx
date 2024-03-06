@@ -23,7 +23,7 @@ const Layout: React.FC<IProps> = ({ navbar, children }) => {
         </header>
 
         {/* content */}
-        <main className="phone:overflow-y-auto">{children}</main>
+        <main className="overflow-y-auto h-full">{children}</main>
       </div>
     </>
   );
