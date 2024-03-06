@@ -57,7 +57,7 @@ I have setup a e2e test repository that can be used to setup fully fledged autom
 
 ## Deploying with Vercel
 
-The simplest deployment method is through Vercel. The GitHub repository is pre-configured with a Vercel domain accessible at [https://blinkist-coding-challenge-5l19h6s0w-cncoding101s-projects.vercel.app/](https://blinkist-coding-challenge-5l19h6s0w-cncoding101s-projects.vercel.app/).
+The simplest deployment method is through Vercel. The GitHub repository is pre-configured with a Vercel domain accessible at [https://blinkist-coding-challenge.vercel.app/](https://blinkist-coding-challenge.vercel.app/).
 
 ## Notes
 
