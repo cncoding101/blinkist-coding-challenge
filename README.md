@@ -57,9 +57,13 @@ I have setup a e2e test repository that can be used to setup fully fledged autom
 
 ## Deploying with Vercel
 
-The simplest deployment method is through Vercel. The GitHub repository is pre-configured with a Vercel domain accessible at [https://blinkist-coding-challenge.vercel.app/](https://blinkist-coding-challenge.vercel.app/).
+The simplest deployment method is through Vercel. The GitHub repository is pre-configured with a Vercel domain accessible at [https://blinkist-coding-challenge-axnn2t8wz-cncoding101s-projects.vercel.app/](https://blinkist-coding-challenge-axnn2t8wz-cncoding101s-projects.vercel.app/).
 
 ## Notes
+
+### A/B testing
+
+To explore the different variations, such as "control" or "test," you may clear your cookies and refresh the page. After several attempts, both variations should become visible. Should an error page indicating a problem appear, it is likely due to the absence of a generated user ID. A simple page refresh should resolve this issue.
 
 ### GitHub Workflow
 
