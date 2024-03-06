@@ -1,40 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js
 
-## Getting Started
+This repository contains a ready-to-deploy Next.js web application. Utilizing a hybrid rendering approach that combines Server-Side Rendering (SSR) and Client-Side Rendering (CSR). The project includes ESLint for code linting, TypeScript for static typing, and Tailwind CSS for styling.
 
-First, run the development server:
+## Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Hybrid Rendering:** SSR in Next.js improves SEO, CSR allowing for a better user experience.
+- **ESLint:** Ensures consistent code quality and style.
+- **TypeScript:** Adds static typing to enhance code robustness.
+- **Tailwind CSS:** Provides utility-first styling for quick and responsive designs.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Frontend Component Structure:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+The frontend component structure adheres to the Atomic Design pattern by Brad Frost. To learn more about Atomic Design, visit [https://atomicdesign.bradfrost.com](https://atomicdesign.bradfrost.com).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Backend Structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The backend leverages Next.js's serverless. To define API routes, simply utilize the `api` folder. For those interested in utilizing Server-Side Rendering (SSR) capabilities, further information can be found in the [Next.js documentation](https://nextjs.org/docs/basic-features/pages#server-side-rendering). For caching mechanisms, Redis is employed. Content variations are managed and stored as JSON files within the `data` folder, allowing for simple content management.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+- Clone the repository
+- Run docker-compose file (make sure you have docker installed locally):
+  ```bash
+    docker-compose up -d
+  ```
+- Run npm install:
+  ```bash
+    npm install
+  ```
+- Run npm dev to spin up it up locally:
+  ```bash
+    npm run dev
+  ```
+- Run npm build to lint and optimize for production builds:
+  ```bash
+    npm run build
+  ```
 
-To learn more about Next.js, take a look at the following resources:
+## Testing with Lighthouse
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To assess the application using Lighthouse, follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Build and start the application by running the following command in your terminal:
+   ```bash
+   npm run build && npm run start
+   ```
+2. Open the site in Google Chrome
+3. Use the Developer Tools to inspect the site
+4. Navigate to the Lighthouse tab
+5. Run an analysis on the site using Lighthouse.
 
-## Deploy on Vercel
+## End-to-End Tests
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+I have setup a e2e test repository that can be used to setup fully fledged automated tests. While these tests are not currently configured to run with this project, setting them up is a straightforward process. To find out more on how to integrate these tests please follow the link to access the repository: [Test Automation with PPCC](https://github.com/cncoding101/test-automation-with-ppcc).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deploying with Vercel
+
+The simplest deployment method is through Vercel. The GitHub repository is pre-configured with a Vercel domain accessible at [https://blinkist-coding-challenge-5l19h6s0w-cncoding101s-projects.vercel.app/](https://blinkist-coding-challenge-5l19h6s0w-cncoding101s-projects.vercel.app/).
+
+## Notes
+
+### GitHub Workflow
+
+I have included a GitHub workflow that builds the application before committing. This workflow can be extended to incorporate production deployments, enabling continuous integration pipelines.
