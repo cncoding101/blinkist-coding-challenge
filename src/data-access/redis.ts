@@ -5,7 +5,6 @@ const url: string = process.env.REDIS_URL || "redis://localhost:6379";
 let redisClient: RedisClientType | undefined;
 const getRedisClient = async (): Promise<RedisClientType> => {
   if (!redisClient) {
-    // Client is not created yet, so create and connect it.
     const client: RedisClientType = createClient({ url });
     client.on("error", (err: Error) => {
       console.log("Redis client error", err);

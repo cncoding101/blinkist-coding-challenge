@@ -1,22 +1,18 @@
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import { v4 as uuidv4 } from "uuid";
 import Cookie from "js-cookie";
 
 import Text from "@/components/atoms/Text";
-import Link from "@/components/atoms/Link";
 import Button from "@/components/atoms/Button";
 import HeroImage from "@/components/atoms/Image";
 import Error from "@/components/molecules/Error";
 import { usePhoneView } from "@/hoc/layout";
 import { IVariation } from "@/util/types";
 import { fetchVariation } from "@/business/home";
-import { useEffect } from "react";
-import { trackEvent, trackPageview } from "@/services/analytics-api";
+import { trackEvent } from "@/services/analytics-api";
 
 export const getServerSideProps = (async (context) => {
   const userId = context.req.cookies.userId || "";
-  // Now using the extracted service logic
   const { variation, error } = await fetchVariation("home", userId);
 
   return {
@@ -33,16 +29,6 @@ export default function Home({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter();
   const isPhoneView = usePhoneView();
-
-  // Ensuring that a userId exists or create a new one
-  const userId = Cookie.get("userId");
-  useEffect(() => {
-    if (!error && userId) {
-      // Track the page view when the component mounts, the content loads successfully, and a userId exists
-      trackPageview({ url: window.location.pathname, userId });
-    }
-  }, [error, userId]);
-  if (!userId) Cookie.set("userId", uuidv4(), { path: "/" });
 
   const handleClick = async (e: React.MouseEvent) => {
     e.preventDefault();

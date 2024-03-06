@@ -1,8 +1,27 @@
+import { useRouter } from "next/router";
+import Cookie from "js-cookie";
+
 import Button from "@/components/atoms/Button";
-import Link from "@/components/atoms/Link";
 import Text from "@/components/atoms/Text";
+import { trackEvent } from "@/services/analytics-api";
 
 const SignUp: React.FC = () => {
+  const router = useRouter();
+
+  const handleClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    const userId = Cookie.get("userId");
+    if (userId) {
+      trackEvent({
+        url: window.location.pathname,
+        userId,
+        eventName: "redirect-home",
+      });
+    }
+
+    await router.push("/");
+  };
+
   return (
     <div className="flex flex-col items-center py-8">
       <header>
@@ -16,10 +35,12 @@ const SignUp: React.FC = () => {
           Click to go back to the home page
         </Text>
 
-        <Button variant="primary" className="w-1/2">
-          <Link to="/" className="text-xl font-medium uppercase">
-            Home
-          </Link>
+        <Button
+          variant="primary"
+          onClick={handleClick}
+          className="text-xl font-medium uppercase"
+        >
+          Home
         </Button>
       </section>
     </div>

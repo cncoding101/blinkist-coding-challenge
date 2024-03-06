@@ -16,7 +16,7 @@ const Layout: React.FC<IProps> = ({ navbar, children }) => {
         <link rel="icon" href="/logo_head.png" />
       </Head>
 
-      <div className="flex h-screen flex-col">
+      <div className="flex h-screen flex-col overflow-x-hidden">
         {/* navbar */}
         <header className="sticky top-0">
           <Navbar {...navbar} />

@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        phone: { min: "375px", max: "1024px" },
+        phone: { max: "1024px" },
         laptop: "1024px",
       },
       colors: {
