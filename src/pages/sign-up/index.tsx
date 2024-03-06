@@ -25,7 +25,10 @@ const SignUp: React.FC = () => {
   return (
     <div className="flex flex-col items-center py-8">
       <header>
-        <Text variant="title" className="text-4xl uppercase">
+        <Text
+          variant="title"
+          className="laptop:text-4xl phone:text-2xl uppercase"
+        >
           This is a dummy page
         </Text>
       </header>
