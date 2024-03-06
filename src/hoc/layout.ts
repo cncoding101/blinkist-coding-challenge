@@ -5,7 +5,9 @@ const threshold = {
 } as const;
 
 const usePhoneView = () => {
-  const [isPhoneView, setIsPhoneView] = useState(false);
+  const [isPhoneView, setIsPhoneView] = useState(
+    typeof window !== "undefined" && window.innerWidth < threshold.phone
+  );
 
   useEffect(() => {
     function handleResize() {
